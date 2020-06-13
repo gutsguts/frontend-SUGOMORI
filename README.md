@@ -1,2 +1,1 @@
 # sugomori-frontend
-# frontend-SUGOMORI

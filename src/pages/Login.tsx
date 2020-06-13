@@ -30,7 +30,7 @@ export const Login = (props: LoginProps) => {
   const click = async () => {
     try {
       await User.login(email, password);
-
+      console.log(User.isLoggedIn());
       props.history.push({ pathname: 'list1' });
     } catch (e) {
       setErrMessage('メールアドレスかパスワードが違います');

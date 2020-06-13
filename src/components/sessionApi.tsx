@@ -1,3 +1,5 @@
+import User from './User';
+
 type LoginParams = {
   email: string;
   password: string;
@@ -31,31 +33,44 @@ export const sessionApi = {
       'Content-Type': 'application/json',
     };
 
-    fetch(
+    return fetch(
       'http://localhost:3000/api/v1/auth/sign_in',
       // { method, headers, body, credentials, mode },
       { method, headers, body },
 
       // fetch(logoutUrl, {
       // method: 'POST',
-      // body: JSON.stringify(loginFormData),
     )
-      .then((response) => {
-        console.log('reaponse(sessionApi.login)');
-        console.log(response);
-        const loginStatus = 'true';
-
-        // return response;
-        return loginStatus;
+      .then((res) => {
+        console.log(res);
+        // console.log(User.getLocalStorage(isLoggedIn));
+        return 'true';
       })
-      .catch((error) => {
-        console.log('error');
-        console.error(error);
-        const loginStatus = 'false';
-        // return error;
-        return loginStatus;
+      .catch(() => {
+        return 'false';
       });
   },
+
+  //       });
+  // ).then((response) => {
+  //   if (response.ok) {
+  //     // const loginStatus = 'true';
+
+  //     // return loginStatus;
+  //     // return response.text();
+  //     return true;
+  //   } else {
+  //     return false;
+  //     // return Promise.reject(new Error('エラーです！'));
+  //   }
+  // });
+  // .catch((error) => {
+  //   console.log('error');
+  //   console.error(error);
+  //   const loginStatus = 'false';
+  //   // return error;
+  //   return loginStatus;
+  // });
   logout: () => {
     fetch('http://localhost:3000/api/v1/auth/sign_out', {
       // fetch(logoutUrl, {

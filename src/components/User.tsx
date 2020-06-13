@@ -25,8 +25,17 @@ class User {
     console.log(password);
 
     sessionApi.login({ email, password });
-    this.set('isLoggedIn', loginStatus.toString());
+    // console.log('response.text():' + response.text());
+
+    // this.set('isLoggedIn', loginStatus.toString());
+    // this.set('isLoggedIn', sessionApi.login({ email, password }).toString());
+    this.set('isLoggedIn', JSON.stringify(sessionApi.login({ email, password })));
+
+    console.log('isLoggedInの内容');
     console.log('isLoggedIn:' + this.isLoggedIn());
+    // console.log('this.getLocalStorage:' + this.getLocalStorage('isLoggedIn'));
+    console.log('this.getLocalStorage:', this.getLocalStorage('isLoggedIn'));
+
     return true;
   };
 
