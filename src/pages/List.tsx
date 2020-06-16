@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { Container } from 'react-bootstrap';
+
+import { Grid } from '@zeit-ui/react';
 
 export const List = () => {
-  return <Container className="center">Hello Login app list</Container>;
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={6}>Hello Login app list</Grid>
+    </Grid.Container>
+  );
 };

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 
-import { requestFetch, requestDelete } from '../actions';
-
 interface ShowPostProps {
   text: string[];
   textForHomeTimeline: {

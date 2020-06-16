@@ -18,8 +18,9 @@ export const registrationApi = {
       method: 'POST',
       body: JSON.stringify(registrationFormData),
     }).then((response) => {
-      console.log('then(registrationApi.signUp)');
-
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('then(registrationApi.signUp)');
+      }
       return response;
     });
   },

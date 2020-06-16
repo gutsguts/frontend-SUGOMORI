@@ -6,7 +6,6 @@ export function Header() {
   // ログアウト
   const click = async () => {
     try {
-      console.log('const click ');
       await User.logout;
       User.logout();
     } catch (e) {
